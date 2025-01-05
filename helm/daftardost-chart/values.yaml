@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: abhishekp084/daftardost
   pullPolicy: IfNotPresent
-  tag: v1
+  tag: "12621393761"
 
 ingress:
   enabled: false
