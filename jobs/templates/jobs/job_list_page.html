@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="job-list-container">
+    <h1>{{ page.title }}</h1>
+
+    {% if page.introduction %}
+        <div class="introduction">
+            {{ page.introduction|richtext }}
+        </div>
+    {% endif %}
+
+    {% if jobs %}
+        <div class="job-listings">
+            {% for job in jobs %}
+                <div class="job-card">
+                    <h2><a href="{% pageurl job %}">{{ job.title }}</a></h2>
+                    {% if job.date_posted %}
+                        <p class="post-date">Posted: {{ job.date_posted }}</p>
+                    {% endif %}
+                    {% if job.introduction %}
+                        <p class="job-intro">{{ job.introduction|truncatewords:30 }}</p>
+                    {% endif %}
+                    <a href="{% pageurl job %}" class="view-details">View Details</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No jobs are currently available.</p>
+    {% endif %}
+</div>
+{% endblock %}

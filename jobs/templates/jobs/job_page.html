@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="job-posting">
+    <h1>{{ page.title }}</h1>
+    
+    <div class="posting-meta">
+        <p>Posted: {{ page.date_posted }}</p>
+        <p>Application Deadline: {{ page.application_deadline }}</p>
+    </div>
+
+    {% if page.introduction %}
+    <div class="introduction">
+        {{ page.introduction }}
+    </div>
+    {% endif %}
+
+    <h2>Important Dates</h2>
+    <table class="dates-table">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for block in page.important_dates %}
+            <tr>
+                <td>{{ block.value.event }}</td>
+                <td>{{ block.value.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Job Posts</h2>
+    {% for block in page.job_posts %}
+        {% include_block block %}
+    {% endfor %}
+
+    <h2>Application Fees</h2>
+    <table class="fees-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for block in page.application_fee %}
+            <tr>
+                <td>{{ block.value.category }}</td>
+                <td>₹{{ block.value.amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
