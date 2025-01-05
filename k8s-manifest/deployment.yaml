@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daftardost
+  labels:
+    app: daftardost
+spec:    
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daftardost
+  template:
+    metadata:
+      labels:
+        app: daftardost
+    spec:
+      containers:
+      - name: daftardost
+        image: abhishekp084/daftardost:v1  
+        ports:
+        - containerPort: 8000
