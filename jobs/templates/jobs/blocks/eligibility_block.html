@@ -1,0 +1,68 @@
+<!-- jobs/templates/jobs/blocks/eligibility_block.html -->
+{% load wagtailcore_tags %}
+
+<div class="eligibility block">
+ <style>
+    /* Eligibility block styles */
+.eligibility .age-limits {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 1.5rem;
+}
+
+.eligibility .age-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.eligibility .age-item .label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.eligibility .age-item .value {
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.eligibility h4 {
+    color: #2c3e50;
+    margin: 1.5rem 0 1rem;
+}
+
+.eligibility .qualifications,
+.eligibility .age-relaxation {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+ </style>
+    <h3 class="block-title">Eligibility Criteria</h3>
+    
+    <div class="age-limits">
+        <div class="age-item">
+            <span class="label">Minimum Age:</span>
+            <span class="value">{{ value.minimum_age }} years</span>
+        </div>
+        <div class="age-item">
+            <span class="label">Maximum Age:</span>
+            <span class="value">{{ value.maximum_age }} years</span>
+        </div>
+    </div>
+
+    <div class="qualifications">
+        <h4>Educational Qualifications</h4>
+        {{ value.educational_qualification|richtext }}
+    </div>
+
+    {% if value.age_relaxation %}
+    <div class="age-relaxation">
+        <h4>Age Relaxation</h4>
+        {{ value.age_relaxation|richtext }}
+    </div>
+    {% endif %}
+</div>

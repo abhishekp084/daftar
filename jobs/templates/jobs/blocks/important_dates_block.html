@@ -1,0 +1,70 @@
+<!-- jobs/templates/jobs/blocks/important_dates_block.html -->
+{% load wagtailcore_tags %}
+
+<div class="important-dates block">
+    <h3 class="block-title">Important Dates</h3>
+    <div class="dates-grid">
+        <div class="date-item">
+            <span class="label">Application Start Date:</span>
+            <span class="date">{{ value.application_start_date|date:"d M Y" }}</span>
+        </div>
+        
+        <div class="date-item">
+            <span class="label">Last Date to Apply:</span>
+            <span class="date">{{ value.application_end_date|date:"d M Y" }}</span>
+        </div>
+        
+        {% if value.fee_payment_deadline %}
+        <div class="date-item">
+            <span class="label">Fee Payment Deadline:</span>
+            <span class="date">{{ value.fee_payment_deadline|date:"d M Y" }}</span>
+        </div>
+        {% endif %}
+        
+        {% if value.exam_date %}
+        <div class="date-item">
+            <span class="label">Exam Date:</span>
+            <span class="date">{{ value.exam_date }}</span>
+        </div>
+        {% endif %}
+        
+        {% if value.admit_card_date %}
+        <div class="date-item">
+            <span class="label">Admit Card Available:</span>
+            <span class="date">{{ value.admit_card_date }}</span>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.important-dates {
+    margin-bottom: 2rem;
+}
+
+.dates-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.date-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.date-item .label {
+    display: block;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.date-item .date {
+    display: block;
+    font-weight: bold;
+    color: #212529;
+}
+</style>

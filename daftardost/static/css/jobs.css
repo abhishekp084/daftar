@@ -1,0 +1,137 @@
+/* static/css/jobs.css */
+.title-block {
+    margin: 2em 0 1em;
+}
+
+.text-block {
+    margin: 1em 0;
+}
+
+.image-block {
+    margin: 2em 0;
+}
+
+.image-block img {
+    max-width: 100%;
+    height: auto;
+}
+
+.link-block {
+    margin: 1em 0;
+}
+
+.important-date {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.application-fee {
+    padding: 10px;
+    background: #f5f5f5;
+    margin: 5px 0;
+}
+
+.vacancy-detail {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.trade-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.total-posts {
+    color: #666;
+    margin: 5px 0;
+}
+
+.eligibility {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+
+/*  */
+
+/* static/css/recruitment.css */
+/* Block common styles */
+.block {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.block-title {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Important dates */
+.dates-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.date-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.date-item .label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.date-item .date {
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Application fee */
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Links */
+.link-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.link-button:hover {
+    background: #2980b9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .fee-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}

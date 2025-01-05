@@ -1,0 +1,22 @@
+<!-- jobs/templates/jobs/blocks/application_fee_block.html -->
+<div class="application-fee block">
+    <h3 class="block-title">Application Fee</h3>
+    <div class="fee-categories">
+        {% for category in value.fee_categories %}
+        <div class="fee-item">
+            <span class="category">{{ category.value.category_name }}</span>
+            <span class="amount">₹{{ category.value.fee_amount }}</span>
+        </div>
+        {% endfor %}
+    </div>
+    {% if value.payment_methods %}
+    <div class="payment-methods">
+        <h4>Payment Methods:</h4>
+        <ul>
+            {% for method in value.payment_methods %}
+            <li>{{ method }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>

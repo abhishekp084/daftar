@@ -1,0 +1,11 @@
+<!-- jobs/templates/jobs/blocks/how_to_apply_block.html -->
+{% load wagtailcore_tags %}
+
+<div class="how-to-apply block">
+    <h3 class="block-title">{{ value.title }}</h3>
+    <ol class="steps">
+        {% for step in value.steps %}
+        <li>{{ step|richtext }}</li>
+        {% endfor %}
+    </ol>
+</div>

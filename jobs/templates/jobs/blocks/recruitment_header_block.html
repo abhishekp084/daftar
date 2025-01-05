@@ -1,0 +1,10 @@
+
+<!-- jobs/templates/jobs/blocks/recruitment_header_block.html -->
+<div class="recruitment-header block">
+    <h2 class="post-name">{{ value.post_name }}</h2>
+    <div class="organization">{{ value.organization }}</div>
+    {% if value.advertisement_number %}
+    <div class="advt-number">Advertisement No: {{ value.advertisement_number }}</div>
+    {% endif %}
+    <div class="vacancies">Total Vacancies: {{ value.total_vacancies }}</div>
+</div>

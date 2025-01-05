@@ -1,0 +1,13 @@
+<!-- templates/blocks/vacancy_details_block.html -->
+<div class="vacancy-details block">
+    <h3 class="block-title">{{ value.post_name }}</h3>
+    <div class="category-distribution">
+        {% for category in value.category_distribution %}
+        <div class="category-item">
+            <span class="category">{{ category.value.category_name }}</span>
+            <span class="posts">{{ category.value.number_of_posts }} Posts</span>
+            <span class="posts">{{ category.eligibility }} Posts</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>

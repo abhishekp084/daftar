@@ -1,0 +1,15 @@
+<!-- jobs/templates/jobs/blocks/important_links_block.html -->
+<div class="important-links block">
+    <h3 class="block-title">Important Links</h3>
+    <div class="links-grid">
+        {% if value.apply_online_url %}
+        <a href="{{ value.apply_online_url }}" class="link-button" target="_blank">Apply Online</a>
+        {% endif %}
+        {% if value.notification_url %}
+        <a href="{{ value.notification_url }}" class="link-button" target="_blank">Download Notification</a>
+        {% endif %}
+        {% if value.official_website %}
+        <a href="{{ value.official_website }}" class="link-button" target="_blank">Official Website</a>
+        {% endif %}
+    </div>
+</div>
